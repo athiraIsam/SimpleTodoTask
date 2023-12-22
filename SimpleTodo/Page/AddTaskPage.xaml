@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleTodo.Page.AddTaskPage" NavigationPage.HasNavigationBar="True" 
+             NavigationPage.HasBackButton="True" 
+             Title="Add Task">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Add Task Entry-->
+            <Frame BackgroundColor="Transparent" BorderColor="Gray" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="0.7*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Name:" VerticalTextAlignment="Center"></Label>
+                    <Entry Grid.Column="1"></Entry>
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="Transparent" BorderColor="Gray" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="0.7*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Description:" VerticalTextAlignment="Center"></Label>
+                    <Entry Grid.Column="1"></Entry>
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="Transparent" BorderColor="Gray" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="0.7*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Date:" VerticalTextAlignment="Center"></Label>
+                    <DatePicker Grid.Column="1"></DatePicker>
+                </Grid>
+            </Frame>
+            
+            <!--Bottom-->
+            <Button Text="Add" VerticalOptions="EndAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -73,9 +73,9 @@ namespace SimpleTodo.Page
             }
         }
 
-        private void Add_Clicked(object sender, EventArgs e)
+        private async void Add_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new AddTaskPage());
         }
     }
 }
