@@ -15,7 +15,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Name:" VerticalTextAlignment="Center"></Label>
-                    <Entry Grid.Column="1"></Entry>
+                    <Entry x:Name="NameEntry" Grid.Column="1" Placeholder="Enter name" PlaceholderColor="Gray"></Entry>
                 </Grid>
             </Frame>
             <Frame BackgroundColor="Transparent" BorderColor="Gray" Padding="10">
@@ -29,7 +29,7 @@
                     </Grid.RowDefinitions>
 
                     <Label Text="Description:" VerticalTextAlignment="Center"></Label>
-                    <Entry Grid.Column="1"></Entry>
+                    <Entry x:Name="DescriptionEntry" Grid.Column="1" Placeholder="Enter description (optional)" PlaceholderColor="Gray"></Entry>
                 </Grid>
             </Frame>
             <Frame BackgroundColor="Transparent" BorderColor="Gray" Padding="10">
@@ -40,12 +40,12 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Date:" VerticalTextAlignment="Center"></Label>
-                    <DatePicker Grid.Column="1"></DatePicker>
+                    <DatePicker x:Name="DatePicker_" Grid.Column="1"></DatePicker>
                 </Grid>
             </Frame>
             
             <!--Bottom-->
-            <Button Text="Add" VerticalOptions="EndAndExpand"></Button>
+            <Button Text="Add" VerticalOptions="EndAndExpand" Clicked="Add_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

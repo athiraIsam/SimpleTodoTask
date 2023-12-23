@@ -13,7 +13,7 @@
             
             <!--Todo ListView-->
             <StackLayout x:Name="TodoLayout" Margin="0,20,0,0" IsVisible="false">
-                <ListView x:Name="TodoListView" ItemsSource="{Binding Tasks}" >
+                <ListView x:Name="TodoListView" ItemsSource="{Binding Tasks}" ItemTapped="TodoListView_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -24,14 +24,12 @@
                                                 <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="0.5*" />
+                                                <ColumnDefinition Width="0.6*" />
                                                 <ColumnDefinition Width="0.2*" />
-                                                <ColumnDefinition Width="0.1*" />
                                             </Grid.ColumnDefinitions>
 
                                             <Label Text="{Binding Name}" VerticalTextAlignment="Center"></Label>
                                             <Label Grid.Column="1" Text="{Binding Time}"  VerticalTextAlignment="Center"></Label>
-                                            <RadioButton Grid.Column="2" IsChecked="{Binding IsTaskCompleted}" ></RadioButton>
                                         </Grid>
                                     </Frame>
                                 </ViewCell.View>
