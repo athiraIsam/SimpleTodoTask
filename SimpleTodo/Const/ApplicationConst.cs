@@ -8,5 +8,6 @@ namespace SimpleTodo.Const
     {
         public const string TaskData = "TaskData";
         public const string AddTask = "AddTask";
+        public const string UpdateTask = "UpdateTask";
     }
 }

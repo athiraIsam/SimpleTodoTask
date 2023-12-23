@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleTodo.Page.UpdateTaskPage" NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="True">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Task Entry-->
+            <Frame BackgroundColor="Transparent" BorderColor="Gray" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="0.7*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Name:" VerticalTextAlignment="Center"></Label>
+                    <Entry x:Name="NameEntry" Grid.Column="1" Placeholder="Enter name" PlaceholderColor="Gray"></Entry>
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="Transparent" BorderColor="Gray" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="0.7*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Description:" VerticalTextAlignment="Center"></Label>
+                    <Entry x:Name="DescriptionEntry" Grid.Column="1" Placeholder="Enter description (optional)" PlaceholderColor="Gray"></Entry>
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="Transparent" BorderColor="Gray" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="0.7*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Date:" VerticalTextAlignment="Center"></Label>
+                    <DatePicker x:Name="DatePicker_" Grid.Column="1"></DatePicker>
+                </Grid>
+            </Frame>
+
+            <!--Bottom-->
+            <Button Text="Edit" VerticalOptions="EndAndExpand" Clicked="Edit_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

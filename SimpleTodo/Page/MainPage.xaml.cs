@@ -53,6 +53,11 @@ namespace SimpleTodo.Page
             {
                 UpdateUI();
             });
+            MessagingCenter.Subscribe<UpdateTaskPage>(this, ApplicationConst.UpdateTask, (sender) =>
+            {
+                UpdateUI();
+            });
+
             InitializeUI();
         }
 
@@ -93,6 +98,7 @@ namespace SimpleTodo.Page
                 {
                     Tasks.Add(new Model.Task()
                     {
+                        Id = task.Id,
                         Name = task.Name,
                         Description = task.Description,
                         Time = task.Time
@@ -107,10 +113,10 @@ namespace SimpleTodo.Page
             await Navigation.PushAsync(new AddTaskPage());
         }
 
-        private void TodoListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void TodoListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var item = e.Item as Model.Task;
-           // await Navigation.PushAsync(new UpdateExpensesPage(item));
+            await Navigation.PushAsync(new UpdateTaskPage(item));
             TodoListView.SelectedItem = null;
         }
     }
