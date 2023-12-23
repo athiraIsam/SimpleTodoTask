@@ -43,7 +43,8 @@
             </Frame>
 
             <!--Bottom-->
-            <Button Text="Edit" VerticalOptions="EndAndExpand" Clicked="Edit_Clicked"></Button>
+            <Button Text="Delete"  VerticalOptions="EndAndExpand" Clicked="Delete_Clicked"></Button>
+            <Button Text="Edit" Clicked="Edit_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -65,5 +65,21 @@ namespace SimpleTodo.Page
                 await DisplayAlert("Error Update new task", "Please make sure all input is not empty", "Ok");
             }
         }
+
+        private async void Delete_Clicked(object sender, EventArgs e)
+        {
+            var result = await DisplayAlert("Alert!", "Are you sure to delete the task?", "Confirm", "Cancel");
+            if(result)
+            {
+                var tasks = ConfigurationService.GetTaskData().ToList();
+
+                var deletedTask = tasks.Where(x=>x.Id == task.Id).FirstOrDefault();
+                tasks.Remove(deletedTask);
+                ConfigurationService.SetTaskData(tasks);
+
+                MessagingCenter.Send<UpdateTaskPage>(this, ApplicationConst.DeleteTask);
+                await Navigation.PopAsync();
+            }
+        }
     }
 }

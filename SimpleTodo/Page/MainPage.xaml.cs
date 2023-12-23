@@ -57,7 +57,10 @@ namespace SimpleTodo.Page
             {
                 UpdateUI();
             });
-
+            MessagingCenter.Subscribe<UpdateTaskPage>(this, ApplicationConst.DeleteTask, (sender) =>
+            {
+                UpdateUI();
+            });
             InitializeUI();
         }
 
@@ -66,7 +69,7 @@ namespace SimpleTodo.Page
             Tasks = new ObservableCollection<Model.Task>();
             NoListPlaceholder.IsVisible = true;
             TodoLayout.IsVisible = false;
-            if (ConfigurationService.GetTaskData() != null)
+            if (ConfigurationService.GetTaskData() != null && ConfigurationService.Task.Count()!=0)
             {
                 NoListPlaceholder.IsVisible = false;
                 TodoLayout.IsVisible = true;
@@ -75,6 +78,7 @@ namespace SimpleTodo.Page
                 {
                     Tasks.Add(new Model.Task()
                     {
+                        Id = task.Id,
                         Name = task.Name,
                         Description = task.Description,
                         Time = task.Time
@@ -89,7 +93,7 @@ namespace SimpleTodo.Page
             Tasks = new ObservableCollection<Model.Task>();
             NoListPlaceholder.IsVisible = true;
             TodoLayout.IsVisible = false;
-            if(ConfigurationService.GetTaskData() != null)
+            if (ConfigurationService.GetTaskData() != null && ConfigurationService.Task.Count() != 0)
             {
                 NoListPlaceholder.IsVisible = false;
                 TodoLayout.IsVisible = true;
