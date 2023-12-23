@@ -1,6 +1,6 @@
 # SimpleTodoTask (Xamarin Forms)
 A simple daily todo task with basic operation ( add, update, and delete ) made with Xamarin Forms.
-Download Demo in release folder
+Download Demo in Demo folder
 ![Group 77](https://github.com/athiraIsam/SimpleTodoTask/assets/92247627/5666096c-671a-40af-88cd-f43f5ba80500)
 ![Group 78](https://github.com/athiraIsam/SimpleTodoTask/assets/92247627/99447ab4-5a81-44c7-9d60-3328ec81054f)
 ![Group 79](https://github.com/athiraIsam/SimpleTodoTask/assets/92247627/45843727-342b-4394-8576-65ef9dac14bc)
